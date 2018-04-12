@@ -26,7 +26,7 @@ var LazyForDirective = /** @class */ (function () {
         var _this = this;
         this.templateElem = this.vcr.element.nativeElement;
         if (this.containerElem === undefined) {
-            this.containerElem = this.templateElem.parentElement;
+            this.containerElem = this.templateElem.parentNode.parentElement;
         }
         //Adding an event listener will trigger ngDoCheck whenever the event fires so we don't actually need to call
         //update here.

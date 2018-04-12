@@ -49,7 +49,7 @@ export class LazyForDirective implements DoCheck {
         this.templateElem = this.vcr.element.nativeElement;
 
         if (this.containerElem === undefined) {
-            this.containerElem = this.templateElem.parentElement;
+            this.containerElem = this.templateElem.parentNode.parentElement;
         }
 
         //Adding an event listener will trigger ngDoCheck whenever the event fires so we don't actually need to call
