@@ -49,7 +49,7 @@ export class LazyForDirective implements DoCheck {
         this.templateElem = this.vcr.element.nativeElement;
 
         if (this.containerElem === undefined) {
-            this.containerElem = this.templateElem.parentElement;
+            this.containerElem = this.templateElem.parentNode;
         }
 
         //Adding an event listener will trigger ngDoCheck whenever the event fires so we don't actually need to call
@@ -143,11 +143,11 @@ export class LazyForDirective implements DoCheck {
         }
 
         this.beforeListElem = document.createElement(this.itemTagName);
-        this.templateElem.parentElement.insertBefore(this.beforeListElem, this.templateElem);
+        this.templateElem.parentNode.insertBefore(this.beforeListElem, this.templateElem);
 
         this.afterListElem = document.createElement(this.itemTagName);
         //This inserts after the templateElem. see http://stackoverflow.com/a/4793630/373655 for details
-        this.templateElem.parentElement.insertBefore(this.afterListElem, this.templateElem.nextSibling);
+        this.templateElem.parentNode.insertBefore(this.afterListElem, this.templateElem.nextSibling);
 
         if (this.itemTagName.toLowerCase() === 'li') {
             this.beforeListElem.style.listStyleType = 'none';
