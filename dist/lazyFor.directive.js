@@ -100,10 +100,10 @@ var LazyForDirective = /** @class */ (function () {
             this.itemTagName = sampleItemElem.tagName;
         }
         this.beforeListElem = document.createElement(this.itemTagName);
-        this.templateElem.parentElement.insertBefore(this.beforeListElem, this.templateElem);
+        this.templateElem.parentNode.insertBefore(this.beforeListElem, this.templateElem);
         this.afterListElem = document.createElement(this.itemTagName);
         //This inserts after the templateElem. see http://stackoverflow.com/a/4793630/373655 for details
-        this.templateElem.parentElement.insertBefore(this.afterListElem, this.templateElem.nextSibling);
+        this.templateElem.parentNode.insertBefore(this.afterListElem, this.templateElem.nextSibling);
         if (this.itemTagName.toLowerCase() === 'li') {
             this.beforeListElem.style.listStyleType = 'none';
             this.afterListElem.style.listStyleType = 'none';
